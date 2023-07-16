@@ -1,10 +1,10 @@
 export interface IEmployee {
-    emolyeeId: number;
+    employeeId: number;
     name: string;
-    isActive: boolean;
+    isActive: boolean
     birthday: any
 }
 
 export interface IEmployeeList extends IEmployee {
-    dateCreated: any;
+    dateCreated: any
 }
