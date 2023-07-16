@@ -1,10 +1,27 @@
-import { configureStore } from "@reduxjs/toolkit";
-import todoReducer from "./features/employee/employeeSlice";
+import { configureStore,  ThunkAction } from "@reduxjs/toolkit";
+import { Action } from "redux";
+import { useDispatch as useReduxDispatch } from "react-redux";
+import employeeSlice from './features/employee/employeeSlice'
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    todo: todoReducer,
+    employee: employeeSlice
   },
 });
 
-export default store;
+// Obtain the Dispatch type from the store
+export type AppDispatch = typeof store.dispatch;
+
+// Define the Thunk type for your application
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  null,
+  Action<string>
+>;
+
+// Create a hook that provides the AppDispatch type
+export const useAppDispatch = () => useReduxDispatch<AppDispatch>();
+
+// Infer the `RootState` type from the store itself
+export type RootState = ReturnType<typeof store.getState>;
