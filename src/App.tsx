@@ -4,7 +4,7 @@ function App() {
     <>
       <nav className="navbar is-info">
         <div className="navbar-brand">
-          <a className="navbar-item" href="#"> Sample</a>
+          <a className="navbar-item" href="/">Typescript Crude Application</a>
         </div>
       </nav>
       <div className="container is-max-desktop">
