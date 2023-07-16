@@ -1,11 +1,16 @@
-import React from 'react';
-import './App.css';
-
+import { Employee } from "./features/employee/Employee";
 function App() {
   return (
-    <div className="App">
-      <h2>Typscript react app</h2>
-    </div>
+    <>
+      <nav className="navbar is-info">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="#"> Sample</a>
+        </div>
+      </nav>
+      <div className="container is-max-desktop">
+        <Employee />
+      </div>
+    </>
   );
 }
 
